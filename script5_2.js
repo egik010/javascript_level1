@@ -1,6 +1,6 @@
 'use strict';
 
-alert ('Задание 5 часть 2');
+// alert ('Задание 5 часть 2');
 
 let MyBasket = {
     all_sum: 10,
@@ -18,16 +18,24 @@ let MyBasket = {
         for (let i in MyBasket.product) {
             MyBasket.all_sum += MyBasket.product[i].price * MyBasket.product[i].count;
             MyBasket.all_count += 1;
-            basket_div.innerHTML += MyBasket.product[i].name +  '    ' +
+
+            let div1 = document.createElement("div1");
+            div1.className = "my_div";
+            div1.innerHTML = MyBasket.product[i].name +  '    ' +
                 MyBasket.product[i].price +  '    ' +
                 MyBasket.product[i].count +  '    ' +
                 "<br>";
+            basket_div.appendChild(div1);
+            
         }
         if (MyBasket.all_count === 0) {
             basket_div.innerHTML += `Корзина пустая`;
         } else {
             basket_div.innerHTML += `Кол-во твоаров ${MyBasket.all_count}  Сумма всех товаров в корзине = ${MyBasket.all_sum}`;
         }
+
+
     }
 }
+
 MyBasket.UpdateMyBasket();
